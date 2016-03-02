@@ -1,6 +1,7 @@
 // GLOBAL VARIABLES
 var gameTimer = 0;
 var score = 0;
+var questionNumber = 0;
 
 var triviaQuestions = ['trivia.trivia1', 'trivia.trivia2', 'trivia.trivia3', 'trivia.trivia4', 'trivia.trivia5', 'trivia.trivia6', 'trivia.trivia7', 'trivia.trivia8', 'trivia.trivia9', 'trivia.trivia10'];
 // var randomTrivia = functiong(){
@@ -143,21 +144,22 @@ console.log(trivia[9].question);
 var startGame = function(){
       gameTimer = 0;
       score = 0;
+      questionNumber = 0;
 
-  for (var i = 0; i < trivia.length; i++) {
    $("#answerBlock").html(
+    
 
-        "<h3 id='question'>" + trivia[i].question + "</h3>"+
+        "<h3 id='question'>" + trivia[questionNumber].question + "</h3>"+
         "<div class='row'>" + 
-          "<button type='button' class='btn btn-secondary btn-lg btn-block answer' id='answer1'>" + trivia[i].answerOption1 + "</button></div>" + 
+          "<button type='button' class='btn btn-secondary btn-lg btn-block answer' id='answer1'>" + trivia[questionNumber].answerOption1 + "</button></div>" + 
         "<div class='row'>" + 
-          "<button type='button' class='btn btn-secondary btn-lg btn-block answer' id='answer2'>" + trivia[i].answerOption2 + "</button></div>" + 
+          "<button type='button' class='btn btn-secondary btn-lg btn-block answer' id='answer2'>" + trivia[questionNumber].answerOption2 + "</button></div>" + 
         "<div class='row'>" + 
-          "<button type='button' class='btn btn-secondary btn-lg btn-block answer' id='answer3'>" + trivia[i].answerOption3 + "</button></div>" + 
+          "<button type='button' class='btn btn-secondary btn-lg btn-block answer' id='answer3'>" + trivia[questionNumber].answerOption3 + "</button></div>" + 
         "<div class='row'>" + 
-          "<button type='button' class='btn btn-secondary btn-lg btn-block answer'id='answer4'>" + trivia[i].answerOption4 + "</button></div>"
+          "<button type='button' class='btn btn-secondary btn-lg btn-block answer'id='answer4'>" + trivia[questionNumber].answerOption4 + "</button></div>"
         );
-  }
+  
   
 }
 
@@ -171,16 +173,16 @@ var postLoss = function(){
 }
 
 var checkAnswer = function(){
-  for (var i = 0; i < trivia.length; i++) {
-  trivia[0].postAnswer();
-  if (trivia[0].answerOption1 == trivia[0].correctAnswer()) {
+  trivia[questionNumber].postAnswer();
+  if (trivia[questionNumber].answerOption1 == trivia[questionNumber].correctAnswer()) {
     alert('correct');
     score + 10;
     
   }else{
     alert('wrong');
-  };
-}
+  }
+  questionNumber++;
+
 }
 
 
@@ -189,7 +191,6 @@ var checkAnswer = function(){
 
 $('#answer1').click(function(){
   checkAnswer();
-
   })
 
 $('#answer2').click()
