@@ -1,12 +1,7 @@
 // GLOBAL VARIABLES
-var gameTimer = 0;
+var gameTimer = 20;
 var score = 0;
 var questionNumber = 0;
-
-var triviaQuestions = ['trivia.trivia1', 'trivia.trivia2', 'trivia.trivia3', 'trivia.trivia4', 'trivia.trivia5', 'trivia.trivia6', 'trivia.trivia7', 'trivia.trivia8', 'trivia.trivia9', 'trivia.trivia10'];
-// var randomTrivia = functiong(){
-//   triviaQuestions[Math.floor(Math.random()*triviaQuestions.length)];
-// };
 
 var trivia = [
     {
@@ -17,7 +12,7 @@ var trivia = [
       	answerOption4: "Walt Frazier",
       	correctAnswer: function(){return this.answerOption1},
         postAnswer: function(){
-          $('#answerBlock').html('<h6>Patrick Ewing scored 23,665 points during his career with the Knicks.</h6>' + '<img src="assets/images/giphy.gif" />');
+          $('#answerBlock').html('<h4>Patrick Ewing</h4>'+ '<br>' + '<h5>Patrick Ewing scored 23,665 points during his career with the Knicks.</h5>' + '<img src="assets/images/giphy.gif" />');
         }
       },
 
@@ -27,9 +22,9 @@ var trivia = [
       	answerOption2: "Latrel Sprewell",
       	answerOption3: "Phil Jackson",
       	answerOption4: "John Starks",
-      	correctAnswer: this.answerOption4,
+      	correctAnswer: function(){return this.answerOption4},
         postAnswer: function(){
-          $('#answerBlock').html('<h6>John Starks hit 982 3 pointers during his career with the Knicks.</h6>' + '<img src="assets/images/tumblr_mpalg1LJLA1renuivo1_500.gif" />');
+          $('#answerBlock').html('<h4>John Starks</h4>'+ '<br>' + '<h5>John Starks hit 982 3 pointers during his career with the Knicks.</h5>' + '<img src="assets/images/tumblr_mpalg1LJLA1renuivo1_500.gif" />');
         }
       },
 
@@ -39,9 +34,9 @@ var trivia = [
       	answerOption2: "Barclays Center",
       	answerOption3: "Prudencial Center",
       	answerOption4: "New York Coliseum",
-      	correctAnswer: this.answerOption1,
+      	correctAnswer: function(){return this.answerOption1},
         postAnswer: function(){
-          $('#answerBlock').html('<h6>The current building is the 4th version of Madison Square Garden. The original opened in 1879. Todays MSG, located between 7th and 8th avenue in midtown manhatten opened in 1968.</h6>' + '<img src="assets/images/giphy%20(1).gif" />');
+          $('#answerBlock').html('<h4>Madison Square Garden</h4>'+ '<br>' + '<h5>The current building is the 4th version of Madison Square Garden. The original opened in 1879. Todays MSG, located between 7th and 8th avenue in midtown manhatten opened in 1968.</h5>' + '<img src="assets/images/giphy%20(1).gif" />');
         }
       },
 
@@ -51,9 +46,9 @@ var trivia = [
       	answerOption2: "2",
       	answerOption3: "0",
       	answerOption4: "5",
-      	correctAnswer: this.answerOption2,
+      	correctAnswer: function(){return this.answerOption2},
         postAnswer: function(){
-          $('#answerBlock').html('<h6>The Knicks won championships in the 1969-70 and 1972-73 seasons.</h6>' + '<img src="assets/images/challenge_photo_knicks1970.jpg" />');
+          $('#answerBlock').html('<h4>2</h4>'+ '<br>' + '<h5>The Knicks won championships in the 1969-70 and 1972-73 seasons.</h5>' + '<img src="assets/images/challenge_photo_knicks1970.jpg" />');
         }
       },
 
@@ -63,9 +58,9 @@ var trivia = [
       	answerOption2: "1999",
       	answerOption3: "1973",
       	answerOption4: "1993",
-      	correctAnswer: this.answerOption2,
+      	correctAnswer: function(){return this.answerOption2},
         postAnswer: function(){
-          $('#answerBlock').html('<h6>As the 8th seed, the Knicks beat the top seeded Miami Heat on their way to the NBA finals.</h6>' + '<iframe width="420" height="315" src="https://www.youtube.com/embed/oiJJCnrCX3I?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>');
+          $('#answerBlock').html('<h4>1999</h4>'+ '<br>' + '<h5>As the 8th seed, the Knicks beat the top seeded Miami Heat on their way to the NBA finals.</h5>' + '<img src="assets/images/knicks-99-072615-getty-ftr_p227pk3nyaer14lhn3wys4onc.jpg" />');
         }
       },
 
@@ -75,9 +70,9 @@ var trivia = [
       	answerOption2: "Phil Jackson",
       	answerOption3: "Jeff Van Gundy",
       	answerOption4: "Pat Riley",
-      	correctAnswer: this.answerOption3,
+      	correctAnswer: function(){return this.answerOption3},
         postAnswer: function(){
-          $('#answerBlock').html('<h6>Van Gundy coached the Eastern all stars in the 1999-00 season.</h6>' + '<img src="assets/images/giphy%20(2).gif" />');
+          $('#answerBlock').html('<h4>Jeff Van Gundy</h4>'+ '<br>' + '<h5>Van Gundy coached the Eastern all stars in the 1999-00 season.</h5>' + '<img src="assets/images/giphy%20(2).gif" />');
         }
       },
 
@@ -87,9 +82,9 @@ var trivia = [
       	answerOption2: "1969-70",
       	answerOption3: "1991-92",
       	answerOption4: "1967-68",
-      	correctAnswer: this.answerOption2,
+      	correctAnswer: function(){return this.answerOption2},
         postAnswer: function(){
-          $('#answerBlock').html('<h6>The Knicks won 60 games during the 1992-93 and 1969-70 seasons.</h6>' + '<img src="assets/images/lj-4-point-play-o.gif />');
+          $('#answerBlock').html('<h4>1969-70</h4>'+ '<br>' + '<h5>The Knicks won 60 games during the 1992-93 and 1969-70 seasons.</h5>' + '<img src="assets/images/lj-4-point-play-o.gif" />');
         }
       },
 
@@ -99,9 +94,9 @@ var trivia = [
       	answerOption2: "Michael Bloomberg",
       	answerOption3: "Jack Nicholson",
       	answerOption4: "Spike Lee",
-      	correctAnswer: this.answerOption4,
+      	correctAnswer: function(){return this.answerOption4},
         postAnswer: function(){
-          $('#answerBlock').html('<h6>The film maker Spike Lee can be found at almost every Knick game cheering from celebrity row.</h6>' + '<img src="assets/images/giphy%20(4).gif" />');
+          $('#answerBlock').html('<h4>Spike Lee</h4>'+ '<br>' + '<h5>The film maker Spike Lee can be found at almost every Knick game cheering from celebrity row.</h5>' + '<img src="assets/images/giphy%20(4).gif" />');
         }
       },
 
@@ -111,9 +106,9 @@ var trivia = [
       	answerOption2: "$2 Billion",
       	answerOption3: "$1 Billion",
       	answerOption4: "$3 Billion",
-      	correctAnswer: this.answerOption4,
+      	correctAnswer: function(){return this.answerOption4},
         postAnswer: function(){
-          $('#answerBlock').html('<h6>The Lakers come in second place at $2.7 Billion according to Statista.com</h6>' + '<img src="assets/images/450x348-alg_james-dolan-speaks_display_image.jpg" />');
+          $('#answerBlock').html('<h4>$3 Billion</h4>'+ '<br>' + '<h5>The Lakers come in second place at $2.7 Billion according to Statista.com</h5>' + '<img src="assets/images/450x348-alg_james-dolan-speaks_display_image.jpg" />');
         }
       },
 
@@ -123,33 +118,47 @@ var trivia = [
       	answerOption2: "Go Bankrupt",
       	answerOption3: "Both of These",
       	answerOption4: "None of These",
-        correctAnswer: this.answerOption3,
+        correctAnswer: function(){return this.answerOption3},
         postAnswer: function(){
-          $('#answerBlock').html('<h6>Both the Knicks and Boston Celtics are the only NBA franchizes to never change location or fold.</h6>' + '<img src="assets/images/1395157077000-RSI-USA-KNICKS-JACKSON.jpg" />');
+          $('#answerBlock').html('<h4>Both of These</h4>'+ '<br>' + '<h5>Both the Knicks and Boston Celtics are the only NBA franchizes to never change location or fold.</h5>' + '<img src="assets/images/1395157077000-RSI-USA-KNICKS-JACKSON.jpg" />');
         }
       }
   ];
-
-console.log(trivia);
-
-// FUNCTIONS
-console.log(trivia[7].question);
-console.log(trivia[8].question);
-console.log(trivia[9].question);
-
-
-// console.log(trivia.trivia1.answerOption1);
-// console.log(trivia.trivia1.correctAnswer());
-
-var startGame = function(){
-      gameTimer = 0;
-      score = 0;
-      questionNumber = 0;
-
-   $("#answerBlock").html(
     
 
-        "<h3 id='question'>" + trivia[questionNumber].question + "</h3>"+
+// END OF GAME FUNCTION---------------------------
+function endGame (){
+  stop();
+    $('#answerBlock').html("<h4>Final Score: " + score + "/100" + "</h4>");
+
+    if (score <= 60) {
+      $('#question').html("<h3>You're no fan at all!</h3>");
+    }
+    else if (score == 70) {
+      $('#question').html("<h3>Casual Fan</h3>");
+    }
+    else if (score == 80 || score == 90) {
+      $('#question').html("<h3>Diehard Fan</h3>");
+    }
+    else if (score == 100) {
+      $('#question').html("<h3>Fanatic Fan</h3>");
+    };
+
+    
+}
+
+// PUSHES NEXT QUESTION-------------------
+function nextQuestion (){
+  clearInterval(showQuestion)
+   if (questionNumber==10){
+    endGame();
+  }  
+  else {
+  $("#question").html("<h3>" + trivia[questionNumber].question + "</h3>");
+  $("#answerBlock").html(
+    
+
+        
         "<div class='row'>" + 
           "<button type='button' class='btn btn-secondary btn-lg btn-block answer' id='answer1'>" + trivia[questionNumber].answerOption1 + "</button></div>" + 
         "<div class='row'>" + 
@@ -159,45 +168,123 @@ var startGame = function(){
         "<div class='row'>" + 
           "<button type='button' class='btn btn-secondary btn-lg btn-block answer'id='answer4'>" + trivia[questionNumber].answerOption4 + "</button></div>"
         );
-  
-  
+  run();
+  };
 }
 
-var postWin = function(){
-  $('#answerBlock').html();
-}
-
-var postLoss = function(){
-  $('#question').html(trivia.trivia1.correctAnswer);
-  trivia.trivia1.postAnswer();
-}
-
-var checkAnswer = function(){
+// ------------------ANSWER CHECKING-----------------
+var checkAnswer1 = function(){
+  stop();
   trivia[questionNumber].postAnswer();
   if (trivia[questionNumber].answerOption1 == trivia[questionNumber].correctAnswer()) {
-    alert('correct');
-    score + 10;
+    score= score + 10;
     
   }else{
-    alert('wrong');
   }
-  questionNumber++;
+  postRun();
 
 }
 
+var checkAnswer2 = function(){
+  stop();
+  trivia[questionNumber].postAnswer();
+  if (trivia[questionNumber].answerOption2 == trivia[questionNumber].correctAnswer()) {
+    score= score + 10;
+    
+  }else{
+  }
+  postRun();
+
+}
+
+var checkAnswer3 = function(){
+  stop();
+  trivia[questionNumber].postAnswer();
+  if (trivia[questionNumber].answerOption3 == trivia[questionNumber].correctAnswer()) {
+    score= score + 10;
+    
+  }else{
+  }
+  postRun();
+
+}
+
+var checkAnswer4 = function(){
+  stop();
+  trivia[questionNumber].postAnswer();
+  if (trivia[questionNumber].answerOption4 == trivia[questionNumber].correctAnswer()) {
+    score= score + 10;
+    
+  }else{
+  }
+  postRun();
+
+}
+// ----------------------------------------------------------------
+// TIMERS
+function run(){
+    gameTimer=20;
+      counter = setInterval(increment, 1000);
+    }
+    function increment(){
+      gameTimer--
+      document.getElementById('timer').innerHTML = ('<h6>' + gameTimer + '</h6>')
+      if (gameTimer === 0){
+        stop();
+        postRun();
+        trivia[questionNumber].postAnswer();
+      }
+    }
+
+function postRun (){
+  showQuestion = setInterval(nextQuestion, 6000);
+  questionNumber++;
+}
+
+function stop(){
+  clearInterval(counter);
+    }
 
 
+// START GAME FUNCTION------------------------------------------
+var startGame = function(){
+      score = 0;
+      questionNumber = 0;
+      run();
+
+   $("#question").html("<h3>" + trivia[questionNumber].question + "</h3>");
+  $("#answerBlock").html(
+    
+
+        
+        "<div class='row'>" + 
+          "<button type='button' class='btn btn-secondary btn-lg btn-block answer' id='answer1'>" + trivia[questionNumber].answerOption1 + "</button></div>" + 
+        "<div class='row'>" + 
+          "<button type='button' class='btn btn-secondary btn-lg btn-block answer' id='answer2'>" + trivia[questionNumber].answerOption2 + "</button></div>" + 
+        "<div class='row'>" + 
+          "<button type='button' class='btn btn-secondary btn-lg btn-block answer' id='answer3'>" + trivia[questionNumber].answerOption3 + "</button></div>" + 
+        "<div class='row'>" + 
+          "<button type='button' class='btn btn-secondary btn-lg btn-block answer'id='answer4'>" + trivia[questionNumber].answerOption4 + "</button></div>"
+        ); 
+}
 
 
-$('#answer1').click(function(){
-  checkAnswer();
+// ANSWER/START GAME BUTTONS-------------------------------------
+$(document).on('click','#answer1', function(){
+  checkAnswer1();
   })
 
-$('#answer2').click()
+$(document).on('click','#answer2', function(){
+  checkAnswer2();
+  })
 
-$('#answer3').click()
+$(document).on('click','#answer3', function(){
+  checkAnswer3();
+  })
 
-$('#answer4').click()
+$(document).on('click','#answer4', function(){
+  checkAnswer4();
+  })
 
 $('#start').click(startGame)
 
