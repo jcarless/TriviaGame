@@ -129,7 +129,7 @@ var trivia = [
       }
   ];
 
-
+console.log(trivia);
 
 // FUNCTIONS
 console.log(trivia[7].question);
@@ -144,26 +144,20 @@ var startGame = function(){
       gameTimer = 0;
       score = 0;
 
-  for (var i = 0; i <= triviaQuestions.length; i++) {
-   $("#answerBlock").html("
+  for (var i = 0; i < trivia.length; i++) {
+   $("#answerBlock").html(
 
-        
-        <div class='row'>
-          <button type='button' class='btn btn-secondary btn-lg btn-block answer' id='answer1'>"trivia[i].answerOption1"</button>
-        </div>
-
-        <div class='row'>
-          <button type='button' class='btn btn-secondary btn-lg btn-block answer' id='answer2'>"trivia[i].answerOption2"</button>
-        </div>
-
-        <div class='row'>
-          <button type='button' class='btn btn-secondary btn-lg btn-block answer' id='answer3'>"trivia[i].answerOption3"</button>
-        </div>
-
-        <div class='row'>
-          <button type='button' class='btn btn-secondary btn-lg btn-block answer'id='answer4'>"trivia[i].answerOption4"</button>
-        </div>
-        ");}
+        "<h3 id='question'>" + trivia[i].question + "</h3>"+
+        "<div class='row'>" + 
+          "<button type='button' class='btn btn-secondary btn-lg btn-block answer' id='answer1'>" + trivia[i].answerOption1 + "</button></div>" + 
+        "<div class='row'>" + 
+          "<button type='button' class='btn btn-secondary btn-lg btn-block answer' id='answer2'>" + trivia[i].answerOption2 + "</button></div>" + 
+        "<div class='row'>" + 
+          "<button type='button' class='btn btn-secondary btn-lg btn-block answer' id='answer3'>" + trivia[i].answerOption3 + "</button></div>" + 
+        "<div class='row'>" + 
+          "<button type='button' class='btn btn-secondary btn-lg btn-block answer'id='answer4'>" + trivia[i].answerOption4 + "</button></div>"
+        );
+  }
   
 }
 
@@ -177,6 +171,7 @@ var postLoss = function(){
 }
 
 var checkAnswer = function(){
+  for (var i = 0; i < trivia.length; i++) {
   trivia[0].postAnswer();
   if (trivia[0].answerOption1 == trivia[0].correctAnswer()) {
     alert('correct');
@@ -185,6 +180,7 @@ var checkAnswer = function(){
   }else{
     alert('wrong');
   };
+}
 }
 
 
@@ -202,7 +198,7 @@ $('#answer3').click()
 
 $('#answer4').click()
 
-$('#start').click(startGame())
+$('#start').click(startGame)
 
 
 
