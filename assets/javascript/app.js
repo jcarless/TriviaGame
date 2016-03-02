@@ -12,7 +12,7 @@ var trivia = [
       	answerOption4: "Walt Frazier",
       	correctAnswer: function(){return this.answerOption1},
         postAnswer: function(){
-          $('#answerBlock').html('<h4>Patrick Ewing</h4>'+ '<br>' + '<h5>Patrick Ewing scored 23,665 points during his career with the Knicks.</h5>' + '<img src="assets/images/giphy.gif" />');
+          $('#answerBlock').html('<h4>Patrick Ewing</h4>'+ '<br>' + '<h5>Patrick Ewing scored 23,665 points during his career with the Knicks.</h5>' + '<img class="img-thumbnail" src="assets/images/giphy.gif" />');
         }
       },
 
@@ -89,7 +89,7 @@ var trivia = [
       },
 
     {
-        question: "Who is widley known as the Knicks biggest 'Celebrity Superfan'",
+        question: "Who is widley known as the Knicks biggest 'Celebrity Superfan'?",
        	answerOption1: "Jay-Z",
       	answerOption2: "Michael Bloomberg",
       	answerOption3: "Jack Nicholson",
@@ -144,6 +144,9 @@ function endGame (){
       $('#question').html("<h3>Fanatic Fan</h3>");
     };
 
+    $("#answerBlock").append("<div class='row'>"+
+          "<button type='button' class='btn btn-secondary btn-lg btn-block answer' id='start'>"+"Try Again"+"</button>"+
+        "</div>");
     
 }
 
@@ -223,7 +226,7 @@ var checkAnswer4 = function(){
 // ----------------------------------------------------------------
 // TIMERS
 function run(){
-    gameTimer=20;
+    gameTimer=15;
       counter = setInterval(increment, 1000);
     }
     function increment(){
@@ -286,7 +289,9 @@ $(document).on('click','#answer4', function(){
   checkAnswer4();
   })
 
-$('#start').click(startGame)
+$(document).on('click', '#start', function(){
+  startGame();
+  })
 
 
 
